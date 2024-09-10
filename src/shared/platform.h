@@ -19,6 +19,9 @@
 // So use stat over stat64 for ARM-based Macs
 #define stat64 stat
 #define PRFILESYSTEM_PATH "s"
+#elif defined(__linux__) && defined(__aarch64__)
+#define stat64 stat
+#define PRFILESYSTEM_PATH "s"
 #else
 #define PRFILESYSTEM_PATH "s"
 #endif
